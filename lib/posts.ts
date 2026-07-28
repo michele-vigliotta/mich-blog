@@ -52,3 +52,13 @@ export function getAllPosts(): Post[] {
   return posts.sort((a, b) => (a.data < b.data ? 1 : -1));
 }
 
+
+// funzione che restituisce Post o undefined
+export function getPostBySlug(slug: string): Post | undefined {
+  
+  // find restituisce il primo elemento per cui la condizione è vera,
+  // cioè che il post ha lo slug uguale allo slug passato alla funzione
+  // === confronta tipo e valore
+  return getAllPosts().find((post) => post.slug === slug);
+}
+

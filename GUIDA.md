@@ -224,7 +224,7 @@ mich-blog/
 - [x] **1.** Progetto creato con `create-next-app`
 - [x] **1b.** Dipendenze installate (`gray-matter`; dev: `qrcode`, `@types/qrcode`, `tsx`)
 - [x] **2.** Cartelle create + primo post `.md` (`2026-07-26-primo-post.md`)
-- [ ] **3.** `lib/posts.ts`
+- [x] **3.** `lib/posts.ts` — verificato con `npx tsc --noEmit` e con uno script runtime
 - [ ] **4.** `components/PostCard.tsx`
 - [ ] **5.** `app/page.tsx` (homepage)
 - [ ] **6.** `app/posts/[slug]/page.tsx` (dettaglio)
