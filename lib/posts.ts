@@ -28,7 +28,25 @@ export function getAllPosts(): Post[] {
 
     // map trasforma un elemento in altro
     .map((filename) => {
-      
+      const filePath = path.join(postsDirectory, filename);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+
+      // matter restituisce un oggetto e mi salvo data e content
+      const { data, content } = matter(fileContents);
+
+      const slug = filename.replace(/\.md$/, '');
+
+      // slug e content si chiamano come gli attributi dell'oggetto e sono proprio gli stessi
+      return {
+        slug,
+        title: data.title,
+        data: data.data,
+        ora: data.ora,
+        luogo: data.luogo,
+        tipo: data.tipo,
+        immagine: data.immagine,
+        content,
+      };
     });
 
   return posts.sort((a, b) => (a.data < b.data ? 1 : -1));
